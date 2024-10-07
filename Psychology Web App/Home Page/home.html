@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falcore | Home</title>
+    <link rel="stylesheet" href="./homeStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="welcome-msg">
+                <small>Welcome,</small>
+                <!-- Input name of user below -->
+                <p class="user-name">James Doe</p> 
+            </div>
+            <ul>
+                <li class="notifications-btn">
+                    Notifications
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                        <path d="M7.79496 18C8.38258 18.5187 9.15442 18.8334 9.99983 18.8334C10.8452 18.8334 11.6171 18.5187 12.2047 18M14.9998 7.16669C14.9998 5.8406 14.473 4.56884 13.5353 3.63115C12.5977 2.69347 11.3259 2.16669 9.99983 2.16669C8.67375 2.16669 7.40196 2.69347 6.46427 3.63115C5.5266 4.56884 4.99981 5.8406 4.99981 7.16669C4.99981 9.74185 4.3502 11.505 3.62453 12.6712C3.01242 13.6549 2.70636 14.1468 2.71758 14.284C2.73001 14.4359 2.76219 14.4939 2.88462 14.5847C2.99519 14.6667 3.49364 14.6667 4.49052 14.6667H15.5091C16.506 14.6667 17.0044 14.6667 17.115 14.5847C17.2374 14.4939 17.2696 14.4359 17.282 14.284C17.2932 14.1468 16.9872 13.6549 16.3751 12.6712C15.6494 11.505 14.9998 9.74185 14.9998 7.16669Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </li>
+                <li>
+                    <a href="">Logout</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="notifications-menu">
+            <div class="close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div class="notif">
+                <a href="">
+                    You just received a message...
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <hr>
+
+    <!-- Controls For The User -->
+    <div class="controls-container">
+        <h6>Client's Folders</h6>
+
+        <div class="client-controls">
+            <ul>
+                <li class="new-btn">New</li>
+                <li class="legend-btn">
+                    Legend
+
+                    <div class="dropdown-info">
+                        <small>Requires immediate attention</small>
+                        <small>Shows Signs/Warnings</small>
+                        <small>Good Condition</small>
+                    </div>
+                </li>
+                <li class="sort-btn">
+                    Sort By: <span class="sort-option">Status</span>
+                
+                    <div class="dropdown-info">
+                        <small>Name</small>
+                        <small>Date</small>
+                        <small>Status</small>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Format for Folder Grid -->
+    <div class="folder-container">
+        <div class="folder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="75" height="65" viewBox="0 0 75 65" fill="none">
+                <path d="M0 16C0 11.5817 3.89318 8 8.69565 8H66.3043C71.1068 8 75 11.5817 75 16V49C75 53.4183 71.1068 57 66.3043 57H8.69565C3.89317 57 0 53.4183 0 49V16Z" fill="#404040"/>
+                <path d="M0 8C0 3.58172 3.89318 0 8.69565 0H21.7391C28.9428 0 34.7826 5.37258 34.7826 12V49C34.7826 53.4183 30.8894 57 26.087 57H8.69565C3.89317 57 0 53.4183 0 49V8Z" fill="#404040"/>
+                <path d="M0 24C0 19.5817 3.89318 16 8.69565 16H66.3043C71.1068 16 75 19.5817 75 24V57C75 61.4183 71.1068 65 66.3043 65H8.69565C3.89317 65 0 61.4183 0 57V24Z" fill="#0D0D0D"/>
+            </svg>
+            <div class="client-folder-name">
+                <!-- Color Palette -->
+                <!-- Red: #FA0000, Yellow: #FFBE00, Green: #00A86B -->
+                <!-- Input the status color inside here -->
+                <span class="status" style="background-color: #FA0000;"></span> 
+                <!-- Input client name inside here -->
+                Michael Thompson
+            </div>
+        </div>
+
+        <div class="folder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="75" height="65" viewBox="0 0 75 65" fill="none">
+                <path d="M0 16C0 11.5817 3.89318 8 8.69565 8H66.3043C71.1068 8 75 11.5817 75 16V49C75 53.4183 71.1068 57 66.3043 57H8.69565C3.89317 57 0 53.4183 0 49V16Z" fill="#404040"/>
+                <path d="M0 8C0 3.58172 3.89318 0 8.69565 0H21.7391C28.9428 0 34.7826 5.37258 34.7826 12V49C34.7826 53.4183 30.8894 57 26.087 57H8.69565C3.89317 57 0 53.4183 0 49V8Z" fill="#404040"/>
+                <path d="M0 24C0 19.5817 3.89318 16 8.69565 16H66.3043C71.1068 16 75 19.5817 75 24V57C75 61.4183 71.1068 65 66.3043 65H8.69565C3.89317 65 0 61.4183 0 57V24Z" fill="#0D0D0D"/>
+            </svg>
+            <div class="client-folder-name">
+                <span class="status" style="background-color: #00A86B;"></span> 
+                Emma Rodriguez
+            </div>
+        </div>
+    </div>
+
+    <div class="client-info-overlay">
+        <div class="client-info-container">
+            <!-- (For Client Info Button) -->
+            <div class="client-info">
+                <div class="close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+                <small>Age: <span class="client-age">34</span></small>
+                <small>Gender: <span class="client-gender">Male</span></small>
+                <small>Address: <span class="client-address">Pamplona Tres, Las Pinas</span></small>
+            </div>
+
+            <div class="client-nav">
+                <!-- Input Client Folder Name Below -->
+                <h5>Michael Thompson</h5>
+                <div class="right-side">
+                    <div class="client-info-btn">
+                        <small>Client Info</small>
+                    </div>
+                    <div class="close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="client-status">
+                <p>Status</p>
+                <!-- Input the status color inside here -->
+                <span class="status" style="background-color: #00A86B;"></span> 
+            </div>
+            <!-- Client Sessions Go In This Grid -->
+            <div class="client-sessions-grid">
+                <!-- Input All Client Sessions Here -->
+                <div class="client-session">
+                    <small>November 24, 2024</small>
+                    <div class="client-session-report-btn">
+                        <small>Get Report</small>
+                    </div>
+                </div>
+
+                <div class="client-session">
+                    <small>October 7, 2024</small>
+                    <div class="client-session-report-btn">
+                        <small>Get Report</small>
+                    </div>
+                </div>
+                <div class="client-session">
+                    <small>October 7, 2024</small>
+                    <div class="client-session-report-btn">
+                        <small>Get Report</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-client-overlay">
+        <div class="new-client-container">
+            <div class="client-nav">
+                <div class="close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+
+            <form action="">
+                <label for="">Client Info</label>
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Address">
+                <input type="number" placeholder="Contact Number">
+                <input type="number" placeholder="Age">
+                <input type="text" placeholder="Gender">
+                <label for="">Family Contact</label>
+                <input type="text" placeholder="Name">
+                <input type="number" placeholder="Contact Number">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./homeScript.js"></script>
+</body>
+</html>
