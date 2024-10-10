@@ -213,6 +213,11 @@ nav ul li:first-child {
     cursor: pointer;
 }
 
+.folder-container .folder svg {
+    width: 75px;
+    height: 65px;
+}
+
 .folder-container .folder .client-folder-name {
     display: flex;
     align-items: center;
@@ -350,6 +355,7 @@ nav ul li:first-child {
     background-color: #0d0d0d;
     user-select: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .client-info-container .client-sessions-grid .client-session:hover {
@@ -517,6 +523,7 @@ nav ul li:first-child {
     background-color: white;
     transition: right 0.3s ease;
     border-left: 1px solid #d4d4d4;
+    z-index: 1;
 }
 
 .notifications-menu .close-btn {
@@ -544,4 +551,11 @@ nav ul li:first-child {
 .notifications-menu .notif a {
     text-decoration: none;
     color: inherit;
+}
+
+@media screen and (max-width: 765px) {
+    .folder-container .folder svg {
+        width: 80%;
+        height: 100%;
+    }
 }

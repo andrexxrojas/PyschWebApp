@@ -51,62 +51,65 @@ document.addEventListener("click", (e) => {
 });
 
 // When Client Folder Clicked
-let clientFolder = document.querySelectorAll(".folder-container .folder")
-let clientOverlay = document.querySelector(".client-info-overlay")
-
 document.addEventListener("DOMContentLoaded", () => {
-    clientFolder.forEach((folder) => {
-        folder.addEventListener("click", () => {
-            // Show Client Folder Overlay
-            clientOverlay.style.display = "flex";
+    let clientFolder = document.querySelectorAll(".folder-container .folder")
+
+    clientFolder.forEach((item) => {
+        let closeOverlayBtn = item.querySelector(".client-info-overlay .client-info-container .client-nav .right-side .close-btn")
+        let clientOverlay = item.querySelector(".client-info-overlay")
+
+        let clientInfoBtn = item.querySelector(".client-info-container .client-nav .client-info-btn")
+        let clientInfoMenu = item.querySelector(".client-info-container .client-info")
+        let clientInfoMenuCloseBtn =  item.querySelector(".client-info-container .client-info .close-btn")
+        let clientInfoContainer = item.querySelector(".client-info-container")
+
+        // Open folder overlay
+        item.addEventListener("click", (e) => {
+            clientOverlay.style.display = "flex"
+        })
+
+        // Close overlay
+        closeOverlayBtn.addEventListener("click", (e) => {
+            e.stopPropagation();  // Prevent the click from bubbling up to the overlay itself
+            clientOverlay.style.display = "none"
+        })
+
+        clientOverlay.addEventListener("click", (e) => {
+            if (!clientInfoContainer.contains(e.target)) {
+                e.stopPropagation();
+                clientInfoMenu.style.right = "-40%";
+                clientOverlay.style.display = "none";
+            }
+        })
+
+        // Show client info
+        clientInfoBtn.addEventListener("click", () => {
+            const currentRight = window.getComputedStyle(clientInfoMenu).right;
+
+            if (currentRight == "0px") {
+                clientInfoMenu.style.right = "-40%";
+            } else {
+                clientInfoMenu.style.right = "0";
+            }
+
+            console.log("clicked");
+        })
+
+        // Close client info
+        clientInfoMenuCloseBtn.addEventListener("click", () => {
+            clientInfoMenu.style.right = "-40%";
+        })
+
+        clientInfoContainer.addEventListener("click", (e) => {
+            const currentRight = window.getComputedStyle(clientInfoMenu).right;
+
+            if (currentRight == "0px" && !clientInfoMenu.contains(e.target)) {
+                clientInfoMenu.style.right = "-40%";
+            }
         })
     })
 })
 
-// Close Client Overlay
-let clientOverlayCloseBtn = document.querySelector(".client-info-container .client-nav .right-side .close-btn")
-
-clientOverlayCloseBtn.addEventListener("click", () => {
-    clientOverlay.style.display = "none";
-})
-
-// When Client Folder Overlay "Client Info" Clicked
-let clientInfoBtn = document.querySelector(".client-info-container .client-nav .client-info-btn")
-let clientInfoMenu = document.querySelector(".client-info-container .client-info")
-let clientInfoMenuCloseBtn =  document.querySelector(".client-info-container .client-info .close-btn")
-
-let clientInfoContainer = document.querySelector(".client-info-container")
-
-clientOverlay.addEventListener("click", (e) => {
-    if (!clientInfoContainer.contains(e.target)) {
-        clientInfoMenu.style.right = "-40%";
-        clientOverlay.style.display = "none";
-    }
-})
-
-clientInfoBtn.addEventListener("click", () => {
-    const currentRight = window.getComputedStyle(clientInfoMenu).right;
-
-    if (currentRight == "0px") {
-        clientInfoMenu.style.right = "-40%";
-    } else {
-        clientInfoMenu.style.right = "0";
-    }
-
-    console.log("clicked");
-})
-
-clientInfoMenuCloseBtn.addEventListener("click", () => {
-    clientInfoMenu.style.right = "-40%";
-})
-
-clientInfoContainer.addEventListener("click", (e) => {
-    const currentRight = window.getComputedStyle(clientInfoMenu).right;
-
-    if (currentRight == "0px" && !clientInfoMenu.contains(e.target)) {
-        clientInfoMenu.style.right = "-40%";
-    }
-})
 
 // When New Button is Clicked
 let newClientOverlay = document.querySelector(".new-client-overlay")
